@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training TR-102 Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f8fc;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: linear-gradient(to right, #001f3f, #004080);
+      color: white;
+      padding: 20px 0;
+    }
+    h1, h2 {
+      margin: 5px 0;
+    }
+    .buttons {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .day-btn {
+      background-color: #1e90ff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+    .day-btn:hover {
+      background-color: #005cbf;
+    }
+    .main-btn {
+      background-color: #00b894;
+      color: white;
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    .main-btn:hover {
+      background-color: #008f72;
+    }
+    footer {
+      background: linear-gradient(to right, #001f3f, #004080);
+      color: white;
+      padding: 15px 0;
+      
+    }
+    .project-btn {
+      background-color: #0a043c;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .project-btn:hover {
+      background-color: #13075c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo" height="60px">
+    <h1>Training TR-102 Report</h1>
+    <h2>By Sahil, URN 2302656</h2>
+    <h3>Guru Nanak Dev Engineering College , Ludhiana</h3>
+    <h2>30 days Training at Digi boulevards</h2>
+  </header>
+
+  <button class="main-btn" onclick="openPDF('certificate.pdf')">Training Certificate</button>
+  <button class="main-btn" onclick="openPDF('final_report.pdf')">Final Report</button>
+
+  <div class="buttons" id="dayButtons"></div>
+
+
+  <footer>
+    <p>© Sahil</p>
+  </footer>
+
+  <script>
+    const totalDays = 15; // total number of day buttons
+    const container = document.getElementById('dayButtons');
+
+    for (let i = 1; i <= totalDays; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'day-btn';
+      btn.textContent = `Day ${i}`;
+      btn.onclick = () => openPDF(`Day${i}.pdf`);
+      container.appendChild(btn);
+    }
+
+    function openPDF(filename) {
+      window.open(filename, '_blank');
+    }
+  </script>
+</body>
+</html>
